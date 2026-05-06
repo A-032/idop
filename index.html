@@ -1,48 +1,235 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<title>けーこく</title>
-<style>
-  body {
-    background-color: black;
-    color: red;
-    font-family: monospace;
-    text-align: center;
-    padding-top: 100px;
-  }
-  img {
-    max-width: 300px;
-    margin: 20px;
-  }
-  .box {
-    border: 2px solid red;
-    padding: 20px;
-    display: inline-block;
-  }
-  input {
-    margin-top: 10px;
-    padding: 5px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDTP | Integrity & Digital Trust Preservation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;500;700&display=swap');
+        
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #fcfcfc;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        .idtp-dark { background-color: #0a0a0a; }
+        
+        .hero-title {
+            letter-spacing: -0.02em;
+            background: linear-gradient(180deg, #1a1a1a 0%, #4a4a4a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #1a1a1a;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        .form-input {
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+        .form-input:focus {
+            border-color: #1a1a1a;
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+            outline: none;
+        }
+    </style>
 </head>
 <body>
 
-<div class="box">
-  <h1>⚠ けーこく ⚠</h1>
-  <p>あなたのサイトは乗っ取られましたよ。解除方法はありません。</p>
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-bold tracking-tighter">IDTP</span>
+                <div class="h-4 w-[1px] bg-gray-300 mx-2"></div>
+                <span class="text-[10px] leading-tight text-gray-500 uppercase tracking-widest hidden sm:block">Integrity & Digital Trust<br>Preservation</span>
+            </div>
+            <div class="hidden md:flex space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-600 items-center">
+                <a href="#philosophy" class="nav-link">Philosophy</a>
+                <a href="#action" class="nav-link">Action</a>
+                <a href="#council" class="nav-link">Council</a>
+                <a href="#report" class="text-black border border-black px-6 py-2 hover:bg-black hover:text-white transition duration-300">Submit Report</a>
+            </div>
+        </div>
+    </nav>
 
-  <h1>https://discord.gg/D4T8TubXn</h1>
+    <section class="pt-48 pb-32 px-8">
+        <div class="max-w-5xl mx-auto">
+            
+            <!-- サイバー攻撃に関する警告セクション -->
+            <div class="border border-red-200 bg-red-50 p-6 relative overflow-hidden mb-12 shadow-sm">
+                <div class="absolute top-0 left-0 w-1 h-full bg-red-600"></div>
+                <h3 class="text-red-700 font-bold tracking-[0.2em] text-[11px] mb-3 uppercase flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-3 text-red-600"></i>重要なお知らせ
+                </h3>
+                <p class="text-[13px] text-gray-800 leading-relaxed font-medium">
+                    現在、当機構システムに対する悪意あるサイバー攻撃を検知しており、防衛・遮断措置および発信元の特定作業をリアルタイムで実行中です。<br>
+                    当機構への不正アクセスおよび業務妨害は、不正アクセス行為の禁止等に関する法律違反および電子計算機損壊等業務妨害罪に抵触する明確な犯罪行為です。現在収集している全ての通信ログおよび証拠保全データをもとに、特定次第、いかなる例外もなく提携法執行機関への刑事告訴、ならびに甚大な損害賠償請求を含む徹底的な法的措置を直ちに執行します。
+                </p>
+            </div>
+            <!-- 警告セクション終了 -->
 
-  <!-- 画像入れるところ -->
-  <img src="http://www.floral-village.info/up/1778068681.jpg" alt="warning image">
-   <img src="https://imgur.com/QvIrisS.gif" alt="warning image">
+            <div class="inline-block border border-gray-200 px-4 py-1 rounded-full text-[10px] font-bold tracking-[0.3em] uppercase mb-8 text-gray-400">
+                Official Response Force
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold hero-title mb-10">
+                技術は誠実に、<br>進化は法と共に。
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-500 max-w-3xl font-light leading-relaxed">
+                Faith in Tech, Progress in Law. <br>
+                私たちは、不正ツール売買,転用,開発を含むデジタル空間の秩序を脅かす存在に対し、法的・技術的アプローチを用いて健全な進化を支援します。
+            </p>
+        </div>
+    </section>
 
-  <p>Enter password to recover:</p>
-  <input type="text" placeholder="password">
-  <br><br>
-  <button onclick="alert('This is a demo page')">Submit</button>
-</div>
+    <section id="philosophy" class="py-32 idtp-dark text-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid md:grid-cols-2 gap-24 items-center">
+                <div>
+                    <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-blue-500 mb-6">Mission</h2>
+                    <h3 class="text-3xl font-bold mb-8 italic">「自由」は、公正なルールの<br>上にのみ成立する。</h3>
+                    <p class="text-gray-400 leading-loose">
+                        デジタルの進化は常に法の想定を超えていきます。しかし、それは決して無法地帯を許容する理由にはなりません。IDTPは、技術の悪用を「不誠実」と定義し、プラットフォーム運営、法執行機関、そしてユーザーコミュニティの架け橋となり、デジタル空間の信頼（Trust）を再構築します。
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-8 border border-white/10 text-center hover:bg-white/10 transition">
+                        <div class="text-4xl font-light mb-2">I</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-widest">Integrity</div>
+                    </div>
+                    <div class="bg-white/5 p-8 border border-white/10 text-center hover:bg-white/10 transition">
+                        <div class="text-4xl font-light mb-2">D</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-widest">Digital</div>
+                    </div>
+                    <div class="bg-white/5 p-8 border border-white/10 text-center hover:bg-white/10 transition">
+                        <div class="text-4xl font-light mb-2">T</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-widest">Trust</div>
+                    </div>
+                    <div class="bg-white/5 p-8 border border-white/10 text-center hover:bg-white/10 transition">
+                        <div class="text-4xl font-light mb-2">P</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-widest">Preservation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="action" class="py-32 px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-3xl font-bold mb-4 italic">Core Operations</h2>
+                <div class="h-1 w-12 bg-black mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-16">
+                <div class="space-y-6">
+                    <span class="text-4xl font-serif italic text-gray-200">01</span>
+                    <h4 class="text-xl font-bold">監視・特定</h4>
+                    <p class="text-sm text-gray-500">「違法ツール売買」に関連するサーバー、通信プロトコル、および拡散経路を高度な技術を用いてリアルタイムで監視し、証拠を特定します。</p>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-4xl font-serif italic text-gray-200">02</span>
+                    <h4 class="text-xl font-bold">法的アーカイブ</h4>
+                    <p class="text-sm text-gray-500">収集されたデータは、民事・刑事の両面で証拠能力を持つ形式で保存され、関係各所へ提供可能なレポートとして構築されます。</p>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-4xl font-serif italic text-gray-200">03</span>
+                    <h4 class="text-xl font-bold">プラットフォーム連携</h4>
+                    <p class="text-sm text-gray-500">運営会社に対し、利用規約違反および不法行為の技術的根拠を提示し、アカウント凍結や法的措置を迅速に促します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="council" class="py-32 idtp-dark text-white px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+                <div class="lg:w-1/3">
+                    <h2 class="text-xs font-bold tracking-[0.5em] uppercase text-blue-500 mb-6">Internal Advisory</h2>
+                    <h3 class="text-3xl font-bold mb-6 italic">IDTP | デジタル信頼・健全性保全機構評議会</h3>
+                    <h1> (Integrity & Digital Trust Preservation)</h1>
+                    <p class="text-gray-400 leading-loose">
+                        IDTPの活動における透明性と法的・倫理的妥当性を担保するための内部顧問組織です。法曹関係者や情報セキュリティの専門家で構成され、組織のあらゆる介入行為を厳格に監査します。
+                    </p>
+                </div>
+                <div class="lg:w-2/3 grid sm:grid-cols-2 gap-6">
+                    <div class="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                        <div class="text-xl text-gray-400 mb-4"><i class="fas fa-balance-scale"></i></div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest mb-3">Legal Oversight</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            弁護士および法務専門家が、証拠収集やプラットフォームへの報告手続きが、各国の法令（著作権法、不正競争防止法等）に完全に準拠しているかを審査します。
+                        </p>
+                    </div>
+                    <div class="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition">
+                        <div class="text-xl text-gray-400 mb-4"><i class="fas fa-microchip"></i></div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest mb-3">Technical Audit</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            外部のサイバーセキュリティ専門家が、監視・特定技術の正確性を評価し、誤認や過度なプライバシー侵害のリスクを排除するための技術的監査を実施します。
+                        </p>
+                    </div>
+                    <div class="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition sm:col-span-2">
+                        <div class="text-xl text-gray-400 mb-4"><i class="fas fa-shield-alt"></i></div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest mb-3">Ethical Compliance</h4>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            プラットフォームの利用規約およびデジタル倫理との整合性を確認し、IDTPの行動が「ユーザーコミュニティの健全化」という本来の目的に沿って正しく機能しているかを継続的にモニタリングします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="report" class="py-32 px-8 bg-[#f4f4f4]">
+        <div class="max-w-2xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Incident Report</h2>
+                <p class="text-sm text-gray-400">情報の秘匿性は担保されます。勇気ある一歩が秩序を創ります。</p>
+            </div>
+            <form class="space-y-8">
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest mb-3">Case Subject</label>
+                    <input type="text" class="w-full bg-white p-4 form-input" placeholder="例：不正ツールの販売サイト特定">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest mb-3">Target Details / Evidence URL</label>
+                    <textarea class="w-full bg-white p-4 h-40 form-input" placeholder="具体的な証拠となる情報をご記入ください"></textarea>
+                </div>
+                <div class="p-6 bg-yellow-50 border-l-4 border-yellow-400 text-xs text-yellow-800 leading-loose italic">
+                    送信された情報は、IDTPの専門アナリストによって精査され、プラットフォーム運営および法執行機関への報告義務に基づいて処理されます。評議会のガイドラインに基づき、個人情報は厳重に保護されます。
+                </div>
+                <button type="button" class="w-full bg-black text-white py-5 text-xs font-bold uppercase tracking-[0.3em] hover:bg-gray-800 transition shadow-xl">
+                    Dispatch Report
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-gray-100 px-8 text-center">
+        <div class="mb-10 text-2xl font-bold tracking-tighter">IDTP</div>
+        <div class="flex justify-center space-x-8 text-[10px] uppercase tracking-widest text-gray-400 mb-10">
+            <a href="#" class="hover:text-black">Privacy Policy</a>
+            <a href="#" class="hover:text-black">Security Protocol</a>
+            <a href="#" class="hover:text-black">Contact</a>
+        </div>
+        <p class="text-[10px] text-gray-400">© 2023-2026 Integrity & Digital Trust Preservation. Faith in Tech, Progress in Law.</p>
+       <p class="text-[10px] text-gray-400">idtp@outlook.jp</p>
+    </footer>
 
 </body>
 </html>
